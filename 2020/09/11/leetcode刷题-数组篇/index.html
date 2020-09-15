@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>leetcode刷题-数组篇 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、数组遍历： 485.最大连续1的个数  输入: [1,1,0,1,1,1]输出: 3解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3.  解法1:遍历数组，累加连续1，维护一个最大连续1 解法2:求两个零下标差 495.提莫攻击  给出提莫对艾希的攻击时间序列和提莫攻击的中毒持续时间，你需要输出艾希的中毒状态总时长。 输入: [1,2], 2输出: 3原因: 第 1 秒初，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode刷题-数组篇">
+<meta property="og:url" content="http://example.com/2020/09/11/leetcode%E5%88%B7%E9%A2%98-%E6%95%B0%E7%BB%84%E7%AF%87/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、数组遍历： 485.最大连续1的个数  输入: [1,1,0,1,1,1]输出: 3解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3.  解法1:遍历数组，累加连续1，维护一个最大连续1 解法2:求两个零下标差 495.提莫攻击  给出提莫对艾希的攻击时间序列和提莫攻击的中毒持续时间，你需要输出艾希的中毒状态总时长。 输入: [1,2], 2输出: 3原因: 第 1 秒初，">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-11T03:52:21.000Z">
+<meta property="article:modified_time" content="2020-09-12T03:39:00.603Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-leetcode刷题-数组篇" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/11/leetcode%E5%88%B7%E9%A2%98-%E6%95%B0%E7%BB%84%E7%AF%87/" class="article-date">
+  <time datetime="2020-09-11T03:52:21.000Z" itemprop="datePublished">2020-09-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      leetcode刷题-数组篇
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、数组遍历：</p>
+<p><strong>485.最大连续1的个数</strong></p>
+<blockquote>
+<p>输入: [1,1,0,1,1,1]<br>输出: 3<br>解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3.</p>
+</blockquote>
+<p>解法1:遍历数组，累加连续1，维护一个最大连续1</p>
+<p>解法2:求两个零下标差</p>
+<p><strong>495.提莫攻击</strong></p>
+<blockquote>
+<p>给出提莫对艾希的攻击时间序列和提莫攻击的中毒持续时间，你需要输出艾希的中毒状态总时长。</p>
+<p>输入: [1,2], 2<br>输出: 3<br>原因: 第 1 秒初，提莫开始对艾希进行攻击并使其立即中毒。中毒状态会维持 2 秒钟，直到第 2 秒末结束。<br>但是第 2 秒初，提莫再次攻击了已经处于中毒状态的艾希。<br>由于中毒状态不可叠加，提莫在第 2 秒初的这次攻击会在第 3 秒末结束。<br>所以最终输出 3 。</p>
+</blockquote>
+<p>解法关键：思维转换，新增中毒时间不一定是二次中毒结束时间减上次中毒结束时间，可以是<strong>开始时间相减</strong>，最后加上一次中毒持续时间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">static int jiefa1(int[] timeSeries,int duration)&#123;</span><br><span class="line">        int n &#x3D; timeSeries.length;</span><br><span class="line">        if (n &#x3D;&#x3D; 0) return 0;</span><br><span class="line"></span><br><span class="line">        int total &#x3D; 0;</span><br><span class="line">        for(int i &#x3D; 0; i &lt; n - 1; ++i)</span><br><span class="line">            total +&#x3D; Math.min(timeSeries[i + 1] - timeSeries[i], duration);</span><br><span class="line">        return total + duration;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>414.第三大的数</strong></p>
+<blockquote>
+<p>给定一个非空数组，返回此数组中第三大的数。如果不存在，则返回数组中最大的数。要求算法时间复杂度必须是O(n)。</p>
+</blockquote>
+<p>解法1:设定三个变量，遍历数据维护</p>
+<p>解法2:使用<strong>TreeSet集合</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">static int jiefa2(int[] nums)&#123;</span><br><span class="line"></span><br><span class="line">    if(nums &#x3D;&#x3D; null || nums.length &#x3D;&#x3D; 0)</span><br><span class="line">        throw new RuntimeException(&quot;error&quot;);</span><br><span class="line"></span><br><span class="line">    TreeSet&lt;Integer&gt; set &#x3D; new TreeSet&lt;&gt;();</span><br><span class="line">    for(Integer elem :nums)&#123;</span><br><span class="line">        set.add(elem);</span><br><span class="line">        if(set.size() &gt; 3)</span><br><span class="line">            set.remove(set.first());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return set.size() &lt; 3 ? set.last() :set.first();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>628.三个数的最大乘积</strong></p>
+<blockquote>
+<p>给定一个整型数组，在数组中找出由三个数组成的最大乘积，并输出这个乘积。</p>
+<p>注意:</p>
+<p>给定的整型数组长度范围是[3,104]，数组中所有的元素范围是[-1000, 1000]。<br>输入的数组中任意三个数的乘积不会超出32位有符号整数的范围。</p>
+</blockquote>
+<p>最大乘积明显就是   两个最小负数*最大正数   或     三个最大数相乘  </p>
+<p>解法1:排序（Arrays.sort(nums)）</p>
+<p>解法2:遍历数组，维护上述五个数</p>
+<p><strong>645.错误的集合</strong></p>
+<blockquote>
+<p>集合 S 包含从1到 n 的整数。不幸的是，因为数据错误，导致集合里面某一个元素复制了成了集合里面的另外一个元素的值，导致集合丢失了一个整数并且有一个元素重复。</p>
+<p>给定一个数组 nums 代表了集合 S 发生错误后的结果。你的任务是首先寻找到重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。</p>
+<p>示例 1:</p>
+<p>输入: nums = [1,2,2,4]<br>输出: [2,3]</p>
+</blockquote>
+<p>解法1:数组排序</p>
+<p>解法2:使用<strong>map集合</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">static int[] jiefa2(int nums[])&#123;</span><br><span class="line">    int dup &#x3D; -1,miss </span><br><span class="line">    Map&lt;Integer,Integer&gt; map &#x3D; new HashMap&lt;&gt;</span><br><span class="line">    for(int n:nums)&#123;</span><br><span class="line">        map.put(n,map.getOrDefault(n,0)+1);</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i &#x3D; 1; i&lt;&#x3D;nums.length;i++)&#123;</span><br><span class="line">        if(map.containsKey(i))&#123;</span><br><span class="line">            if(map.get(i) &#x3D;&#x3D; 2)</span><br><span class="line">                dup &#x3D; i;</span><br><span class="line">        &#125;else</span><br><span class="line">            miss &#x3D; i;</span><br><span class="line">  </span><br><span class="line">    return new int[] &#123;dup,miss&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解法3:使用额外数组，将原数组值作为新数组下标</p>
+<p><strong>697.数组的度（⭐️）</strong></p>
+<blockquote>
+<p>给定一个非空且只包含非负数的整数数组 nums, 数组的度的定义是指数组里任一元素出现频数的最大值。</p>
+<p>你的任务是找到与 nums 拥有相同大小的度的最短连续子数组，返回其长度。</p>
+<p>输入: [1,2,2,3,1,4,2]<br>输出: 6</p>
+</blockquote>
+<p>解：维护三个hashmap，left，right，count，注意<strong>Collections类和最后for循环的写法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">static int jiefa2(int[] nums)&#123;</span><br><span class="line"></span><br><span class="line">    Map&lt;Integer,Integer&gt; left &#x3D; new HashMap&lt;&gt;(),</span><br><span class="line">            right &#x3D; new HashMap&lt;&gt;(),count &#x3D; new HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    for(int i &#x3D; 0 ; i &lt; nums.length ; i++ )&#123;</span><br><span class="line">        int x &#x3D; nums[i];</span><br><span class="line">        if(left.get(x) &#x3D;&#x3D; null) left.put(x,i);</span><br><span class="line">        right.put(x,i);</span><br><span class="line">        count.put(x,count.getOrDefault(x,0) + 1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int ans &#x3D; nums.length;</span><br><span class="line">    int degree &#x3D; Collections.max(count.values());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    for(int x:count.keySet())&#123;</span><br><span class="line">        if(count.get(x) &#x3D;&#x3D; degree)</span><br><span class="line">            ans &#x3D; Math.min(ans,right.get(x)-left.get(x)+1);</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>442，448.找到所有数组中消失的数字（⭐️）</strong></p>
+<blockquote>
+<p>给定一个范围在  1 ≤ a[i] ≤ n ( n = 数组大小 ) 的 整型数组，数组中的元素一些出现了两次，另一些只出现一次。</p>
+<p>1、找到所有在 [1, n] 范围之间没有出现在数组中的数字？</p>
+<p>2、找到所有出现两次的元素？</p>
+<p>您能在不使用额外空间且时间复杂度为O(n)的情况下完成这个任务吗? 你可以假定返回的数组不算在额外空间内。</p>
+<p>示例：</p>
+<p>输入:<br>[4,3,2,7,8,2,3,1]</p>
+<p>输出:<br>[5,6]</p>
+</blockquote>
+<p><strong>不使用额外空间</strong>且时间复杂度为O(n)的情况解法思想：</p>
+<p>将数组的值对应数组的下标，将对应下标的数组值<strong>取负</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">static List&lt;Integer&gt; wenti1(int[] nums)&#123;</span><br><span class="line">    for(int i &#x3D; 0; i &lt; nums.length ; i++)&#123;</span><br><span class="line">        int index &#x3D; Math.abs(nums[i])-1;&#x2F;&#x2F;注意取绝对值</span><br><span class="line">        if(nums[index] &gt; 0)&#123;  &#x2F;&#x2F;防止有相同值</span><br><span class="line">            nums[index] *&#x3D; -1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    List&lt;Integer&gt; list &#x3D; new LinkedList&lt;&gt;();</span><br><span class="line">    for(int i&#x3D;0;i&lt;nums.length;i++)&#123;</span><br><span class="line">        if(nums[i]&gt;0)&#123;   &#x2F;&#x2F;大于零说明没有出现</span><br><span class="line">            list.add(i+1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public List&lt;Integer&gt; wenti2(int[] nums) &#123;</span><br><span class="line">    List &lt;Integer&gt; list &#x3D; new LinkedList&lt;&gt;();</span><br><span class="line">    for(int i &#x3D; 0 ; i &lt; nums.length ; i++)&#123;</span><br><span class="line">        int index &#x3D; Math.abs(nums[i])-1 ;</span><br><span class="line">        if(nums[index] &lt; 0) &#x2F;&#x2F;小于零说明有一个相同的元素，也就是出现两次</span><br><span class="line">            list.add(index+1);</span><br><span class="line">        nums[index] *&#x3D; -1 ;</span><br><span class="line">    &#125;</span><br><span class="line">    return list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>41.缺失的第一个正数(⭐️)</strong></p>
+<blockquote>
+<p>给你一个未排序的整数数组，请你找出其中没有出现的最小的正整数。</p>
+<p>输入: [1,2,0]<br>输出: 3</p>
+</blockquote>
+<p>解法1:哈希表，使用上一题思想，注意把原数组负数变为n+1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public int firstMissingPositive(int[] nums) &#123;</span><br><span class="line">    int n &#x3D; nums.length;</span><br><span class="line">    for (int i &#x3D; 0; i &lt; n; ++i) &#123;</span><br><span class="line">        if (nums[i] &lt;&#x3D; 0) &#123;</span><br><span class="line">            nums[i] &#x3D; n + 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i &#x3D; 0; i &lt; n; ++i) &#123;</span><br><span class="line">        int num &#x3D; Math.abs(nums[i]);</span><br><span class="line">        if (num &lt;&#x3D; n) &#123;</span><br><span class="line">            nums[num - 1] &#x3D; -Math.abs(nums[num - 1]);&#x2F;&#x2F;保证出现过的数为负数</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i &#x3D; 0; i &lt; n; ++i) &#123;</span><br><span class="line">        if (nums[i] &gt; 0) &#123;</span><br><span class="line">            return i + 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return n + 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/09/11/leetcode%E5%88%B7%E9%A2%98-%E6%95%B0%E7%BB%84%E7%AF%87/" data-id="ckf3bohba0001gn9k57lr6t76" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          计算机网络基础知识-面试题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">操作系统基础知识+面试题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/">计算机网络基础知识-面试题</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/11/leetcode%E5%88%B7%E9%A2%98-%E6%95%B0%E7%BB%84%E7%AF%87/">leetcode刷题-数组篇</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/">操作系统基础知识+面试题</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/10/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81github%E5%90%8E%E7%94%B5%E8%84%91%E6%97%A0%E6%B3%95%E8%AE%BF%EF%BC%8C%E6%89%8B%E6%9C%BA%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE/">hexo搭建博客推送github后电脑无法访，手机可以访问</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/10/%E2%80%9C%E6%88%91%E7%9A%84%E7%AC%ACn%E6%AC%A1%E5%B0%9D%E8%AF%95%E2%80%9D/">“我的第n次尝试”</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

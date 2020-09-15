@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>操作系统基础知识+面试题 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="绪论操作系统的功能：  用户接口：命令接口、程序接口、图形接口 处理机管理：进程控制、进程同步、进程通信、进程调度 存储管理：内存分配、内存保护、地址映射、内存扩充 设备管理：缓冲管理、设备分配、设备处理、虚拟设备管理 文件管理：文件存储空间管理、目录管理、文件读写管理、文件保护、文件系统的安全性、文件接口  操作系统的特征 操作系统的基本特征：并发、虚拟、共享、异步 并发：所谓并发是指在**一段">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统基础知识+面试题">
+<meta property="og:url" content="http://example.com/2020/09/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="绪论操作系统的功能：  用户接口：命令接口、程序接口、图形接口 处理机管理：进程控制、进程同步、进程通信、进程调度 存储管理：内存分配、内存保护、地址映射、内存扩充 设备管理：缓冲管理、设备分配、设备处理、虚拟设备管理 文件管理：文件存储空间管理、目录管理、文件读写管理、文件保护、文件系统的安全性、文件接口  操作系统的特征 操作系统的基本特征：并发、虚拟、共享、异步 并发：所谓并发是指在**一段">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2020/09/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98.assets/image-20200912143329485.png">
+<meta property="og:image" content="http://example.com/2020/09/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98.assets/image-20200912144712326.png">
+<meta property="og:image" content="http://example.com/2020/09/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98.assets/image-20200910225224674.png">
+<meta property="og:image" content="http://example.com/2020/09/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98.assets/image-20200912150520545.png">
+<meta property="og:image" content="http://example.com/2020/09/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98.assets/%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81.jpg">
+<meta property="article:published_time" content="2020-09-10T14:37:06.000Z">
+<meta property="article:modified_time" content="2020-09-13T07:37:50.172Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2020/09/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98.assets/image-20200912143329485.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-操作系统基础知识-面试题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/" class="article-date">
+  <time datetime="2020-09-10T14:37:06.000Z" itemprop="datePublished">2020-09-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      操作系统基础知识+面试题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><p><strong>操作系统的功能：</strong></p>
+<ul>
+<li>用户接口：命令接口、程序接口、图形接口</li>
+<li>处理机管理：进程控制、进程同步、进程通信、进程调度</li>
+<li>存储管理：内存分配、内存保护、地址映射、内存扩充</li>
+<li>设备管理：缓冲管理、设备分配、设备处理、虚拟设备管理</li>
+<li>文件管理：文件存储空间管理、目录管理、文件读写管理、文件保护、文件系统的安全性、文件接口</li>
+</ul>
+<p><strong>操作系统的特征</strong></p>
+<p>操作系统的基本特征：并发、虚拟、共享、异步</p>
+<p><strong>并发</strong>：所谓并发是指在**<em>一段时间**</em>内有多道程序“在宏观上同时运行”，这样的系统叫并发系统。</p>
+<p><strong>虚拟</strong>：操作系统中的虚拟概念，指的是操作系统使用某种技术，要么把物理上的一个变成逻辑上的多个，例如，把一台物理CPU变成多台逻辑上独立的CPU；要么把物理上的多个变成逻辑上的一个，例如，把物理上分开的主存和辅存变成逻辑上统一编址的编程空间，即虚拟内存。</p>
+<p><strong>共享</strong>：多道必然带来共享，即多道程序、多个用户作业共享有限的计算机系统资源。计算机系统中的资源共享有两种类型：互斥共享和“同时”共享。</p>
+<p><strong>异步</strong>：􏳪􏳩􏳙􏳿􏴀􏲣􏱼􏳪􏳩􏳙􏳿􏴀􏲣􏳭􏰭􏳉􏳩􏱍􏳿􏴀􏳦􏳧􏱄􏳱􏳭􏳝􏰟􏴦􏴧􏳛􏲗􏱧􏳭􏰭􏳉􏳩􏱍􏳿􏴀􏳦􏳧􏱄􏳱􏳭􏳝􏰟􏴦􏴧􏳛在多道程序环境下，允许多个程序并发执行，但是由于资源有限每个作业的<strong>执行顺序</strong>和<strong>执行时间</strong>是不确定的。</p>
+<p><strong>操作系统的结构</strong></p>
+<p><img src="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98.assets/image-20200912143329485.png" alt="操作系统的结构"></p>
+<p><strong>中断</strong>是为了实现多道程序并发执行而引入的一种技术，是CPU从用户态进入核心态的唯一途径</p>
+<p><img src="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98.assets/image-20200912144712326.png" alt="中断分类"></p>
+<h1 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h1><p><strong>进程定义</strong>：进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动，是系统进行资源分配和调度的一个独立单位</p>
+<p><strong>组成</strong>：PCB（进程存在的唯一标志），程序段，数据段</p>
+<p>PCB中的进程标识符PID，唯一不重复，用于区分不同的进程。</p>
+<p><strong>临界资源：</strong>一个时间段内只允许一个进程使用的资源，对临界资源的访问，必须互斥的进行。</p>
+<p><strong>临界区</strong>：是指进程中访问临界资源的代码段</p>
+<p>进程互斥需要遵循的<strong>原则</strong>：空闲让进、忙则等待、有限等待、让权等待</p>
+<h4 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征<img src="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98.assets/image-20200910225224674.png" alt="进程的特征"></h4><p><strong>进程的状态转换</strong></p>
+<p><img src="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98.assets/image-20200912150520545.png" alt="进程的状态转换"></p>
+<p>**延伸问题：孤儿进程和僵尸进程有什么区别？</p>
+<ul>
+<li><p>孤儿进程就是说一个父进程退出，而它的一个或多个子进程还在运行，那么这些子进程将成为孤儿进程。孤儿进程将被 <code>init</code> 进程(进程<code>ID</code>为<code>1</code>的进程)所收养，并由 <code>init</code> 进程对它们完成状态收集工作。因为孤儿进程会被 <code>init</code> 进程收养，所以孤儿进程不会对系统造成危害。</p>
+</li>
+<li><p>僵尸进程就是一个子进程的进程描述符在子进程退出时不会释放，只有当父进程通过 <code>wait()</code> 或 <code>waitpid()</code>获取了子进程信息后才会释放。如果子进程退出，而父进程并没有调用 <code>wait()</code> 或 <code>waitpid()</code>，那么子进程的进程描述符仍然保存在系统中，这种进程称之为僵尸进程。僵尸进程通过 <code>ps</code> 命令显示出来的状态为 <code>Z</code>。</p>
+<p>系统所能使用的进程号是有限的，如果产生大量僵尸进程，可能会因为没有可用的进程号而导致系统不能产生新的进程。如果要消灭系统中大量的僵尸进程，只需要将其父进程杀死，此时僵尸进程就会变成孤儿进程，从而被 <code>init</code> 进程所收养，这样 <code>init</code> 进程就会释放所有的僵尸进程所占有的资源，从而结束僵尸进程。</p>
+</li>
+</ul>
+<p>** 延伸问题：什么是守护进程？</p>
+<p><strong>守护进程</strong>是运行在后台的一种特殊进程，它是独立于控制终端的，并周期性地执行某些任务。</p>
+<p><strong>线程定义：</strong></p>
+<p>线程是进程内部的不同的执行路径，是操作系统独立调度的基本单位。一个进程中可以有多个线程，它们共享进程资源。比如说，QQ和微信和浏览器是两个进程，QQ进程里面有很多线程，例如 视频，文字聊天，传送文件等。</p>
+<p><strong>线程实现：</strong><br><strong>内核级线程 1:1 实现</strong></p>
+<p>内核通过操纵调度器对线程进行调度，并将线程的任务映射到处理器上。程序一般不会直接使用内核线程，而是使用内核线程的一种高级接口，轻量级进程，即通常意义上的线程。</p>
+<p>优点：当一个线程被阻塞时，允许其他线程继续执行，并发能力强。</p>
+<p>缺点：代价相对较高，需要在用户态和内核态来回切换。</p>
+<hr>
+<p><strong>用户级线程 1:N 实现</strong></p>
+<p>从广义上讲，一个线程只要不是内核线程，就可以认为是用户线程。狭义上的用户线程指的完全建立在用户空间的线程库上，系统内核不能感知到用户线程的存在及其是如何实现的。</p>
+<p>优点：由于线程管理在用户空间进行，不需要切换到内核态，开销小。</p>
+<p>缺点：一个线程在使用内核服务时被阻塞，整个进程都会被阻塞。</p>
+<hr>
+<p><strong>混合方式 N:M 实现</strong></p>
+<p>混合模式下既存在用户线程，也存在轻量级进程。用户线程完全建立在用户空间中，因此开销依然很小，可以支持大规模并发。轻量级进程作为用户线程和内核线程之间的桥梁，使用内核提供的线程调度功能及处理器映射，降低整个进程阻塞的风险。</p>
+<hr>
+<h3 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h3><p><strong>资源</strong></p>
+<p>进程是资源分配的基本单位，但是线程不拥有资源，线程可以访问隶属于进程的资源。</p>
+<p><strong>调度</strong></p>
+<p>线程是独立调度的基本单位，在同一进程中，线程的切换不会引起进程切换，从一个进程中的线程切换到另一个进程中的线程时，会引起进程切换。</p>
+<p><strong>系统开销</strong></p>
+<p>由于创建或撤销进程时，系统都要为之分配或回收资源，如内存空间、<code>I/O</code> 设备等，所付出的开销远大于创建或撤销线程时的开销。类似地，在进行进程切换时，涉及当前执行进程 <code>CPU</code> 环境的保存及新调度进程 <code>CPU</code> 环境的设置，而线程切换时只需保存和设置少量寄存器内容，开销很小。</p>
+<p><strong>通信</strong></p>
+<p>线程间可以通过直接读写同一进程中的数据进行通信，但是进程通信需要同步和互斥手段的辅助，保证数据一致性。</p>
+<p><strong>线程的状态转换</strong></p>
+<p>在 Java虚拟机 中，线程从最初的创建到最终的消亡，要经历若干个状态：创建(new)、就绪(runnable/start)、运行(running)、阻塞(blocked)、等待(waiting)、时间等待(time waiting) 和 消亡(dead/terminated)。在给定的时间点上，一个线程只能处于一种状态。</p>
+<p><img src="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98.assets/%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81.jpg" alt="img"></p>
+<hr>
+<h2 id="进程间的通信的几种方式"><a href="#进程间的通信的几种方式" class="headerlink" title="进程间的通信的几种方式"></a>进程间的通信的几种方式</h2><ul>
+<li><strong>管道及命名管道</strong>：都是半双工的通信方式，管道可用于具有亲缘关系的父子进程间的通信，命名管道除了具有管道所具有的功能外，它还允许无亲缘关系进程间的通信</li>
+</ul>
+<ul>
+<li><strong>信号</strong>：信号是一种比较复杂的通信方式，用于通知接收进程某个事件已经发生；</li>
+<li><strong>消息队列</strong>：消息队列是消息的链接表，它克服了上两种通信方式中信号量有限的缺点，具有写权限的进程可以按照一定的规则向消息队列中添加新消息；对消息队列有读权限的进程则可以从消息队列中读取信息；</li>
+<li><strong>共享内存</strong>：可以说这是最有用的进程间通信方式。它使得多个进程可以访问同一块内存空间，不同进程可以及时看到对方进程中对共享内存中数据的更新。这种方式需要依靠某种同步操作，如互斥锁和信号量等</li>
+<li><strong>信号量</strong>：一个计数器，可以用来控制多个进程对共享资源的访问。它是一种类似于锁的机制，就是防止某进程正在访问共享资源时，其他进程也访问该资源。主要作为进程之间及同一种进程的不同线程之间的同步和互斥手段</li>
+</ul>
+<ul>
+<li><strong>套接字（socket）</strong>：这是一种更为一般的进程间通信机制，它可用于网络中不同机器之间的进程间通信，应用非常广泛</li>
+</ul>
+<hr>
+<h2 id="处理机调度"><a href="#处理机调度" class="headerlink" title="处理机调度"></a>处理机调度</h2><p><strong>三个层次：</strong></p>
+<ul>
+<li>高级调度（作业调度）：按照某种规则，从后背队列中选择合适的作业将其调入内存，并为其创建进程</li>
+<li>中级调度（内存调度）：按照某种规则，从挂起队列中选择合适的进程将其调回内存</li>
+<li>低级调度（进程调度）：按照某种规则，从就绪队列中选择一个进程为其分配处理机</li>
+</ul>
+<p><strong>调度算法：</strong></p>
+<p>先来先服务（FCFS），短作业优先（SJF），高响应比优先（HRRN），优先权调度算法，多级队列调度算法</p>
+<hr>
+<h2 id="线程同步的方式"><a href="#线程同步的方式" class="headerlink" title="线程同步的方式"></a>线程同步的方式</h2><ul>
+<li><p><strong>临界区</strong></p>
+<p>临界区是一段代码，在临界区内进程将访问临界资源。任何时候最多只有一个进程可以进入临界区，也就是说，临界区具有排他性。所以，为了互斥访问临界资源，每个进程在进入临界区之前，需要先进行检查。</p>
+</li>
+<li><p><strong>互斥量 Synchronized/Lock</strong>：</p>
+<p>采用互斥对象机制，只有拥有互斥对象的线程才有访问公共资源的权限。因为互斥对象只有一个，所以可以保证公共资源不会被多个线程同时访问</p>
+</li>
+<li><p><strong>信号量 Semphare</strong>：</p>
+<p>信号量是一个整型变量，可以对其执行自增和自减操作，自减操作通常也叫做<code>P</code>操作，自增操作也称为<code>V</code>操作。这两个操作需要被设计成原语，是不可分割，通常的做法是在执行这些操作的时候屏蔽中断。进程使用这两个操作进行同步。</p>
+<ul>
+<li>对于<code>P</code>操作，如果执行操作后信号量小于 <code>0</code>，那么执行该操作的进程就会阻塞，否则继续执行； </li>
+<li>对于<code>V</code>操作，如果操作之后的信号量小于等于<code>0</code>，那么就会从阻塞队列唤醒一个进程。</li>
+</ul>
+</li>
+<li><p><strong>事件(信号)，Wait/Notify</strong>：通过通知操作的方式来保持多线程同步，还可以方便的实现多线程优先级的比较操作</p>
+</li>
+</ul>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p><strong>死锁的概念：</strong>在两个或多个并发进程中，如果每个进程持有某种资源而又都等待别的进程释放它或它们现在保持着的资源，在未改变这种状态之前都不能向前推进，称这一组进程产生了死锁。通俗地讲，就是两个或多个进程被无限期地阻塞、相互等待的一种状态。</p>
+<p><strong>死锁产生的原因：</strong>1、系统资源不足；2、进程推进顺序非法；3、信号量的使用不当也会造成死锁；</p>
+<p><strong>死锁产生的四个必要条件</strong></p>
+<ul>
+<li><strong>互斥：</strong>至少有一个资源必须属于非共享模式，即一次只能被一个进程使用；若其他申请使用该资源，那么申请进程必须等到该资源被释放为止；</li>
+<li><strong>占有并等待：</strong>一个进程必须占有至少一个资源，并等待另一个资源，而该资源为其他进程所占有；</li>
+<li><strong>非抢占：</strong>进程不能被抢占，即资源只能被进程在完成任务后自愿释放</li>
+<li><strong>循环等待：</strong>若干进程之间形成一种头尾相接的环形等待资源关系</li>
+</ul>
+<h2 id="死锁的处理策略："><a href="#死锁的处理策略：" class="headerlink" title="死锁的处理策略："></a><strong>死锁的处理策略：</strong></h2><p><strong>1、预防死锁：</strong>破坏死锁产生的四个必要条件</p>
+<ul>
+<li><p><strong>打破互斥条件：</strong></p>
+<p>允许进程同时访问某些资源。但是，有些资源是不能被多个进程所共享的，这是由资源本身属性所决定的，因此，这种办法通常并无实用价值。</p>
+</li>
+<li><p><strong>打破占有并等待条件：</strong></p>
+<ul>
+<li>已拥有资源的进程不能再去请求其他资源。一种实现方法是要求进程在开始执行前请求需要的所有资源</li>
+<li>要求进程请求资源时，先暂时释放其当前拥有的所有资源，再尝试一次获取所需的全部资源</li>
+</ul>
+</li>
+<li><p><strong>打破非抢占条件：</strong></p>
+<p>允许剥夺其他进程已占有的资源，但释放已获得的资源可能会造成前一段工作的失效。这种预防死锁的方式实现起来困难，会降低系统性能。</p>
+</li>
+<li><p><strong>打破循环等待条件：</strong></p>
+<p>实行<strong>资源有序分配策略</strong>。对所有资源排序编号，所有进程对资源的请求必须严格按资源序号递增的顺序提出，即只有占用了小号资源才能申请大号资源，这样就不回产生环路，预防死锁的发生。</p>
+</li>
+</ul>
+<hr>
+<p><strong>2、避免死锁：</strong></p>
+<p>为了避免因为预防死锁而导致所有线程变慢，死锁避免采用了与死锁预防相反的措施。它允许三个必要条件，但通过算法<strong>动态</strong>地检测资源分配状态，以确保循环等待条件不成立，从而确保系统处于安全状态。</p>
+<ul>
+<li><p>安全状态</p>
+<p>如果系统能按某个顺序为每个进程分配资源（不超过其最大值），那么系统状态是安全的，换句话说就是，如果存在一个安全序列，那么系统处于安全状态。</p>
+</li>
+<li><p>资源分配图算法和银行家算法是两种经典的死锁避免的算法，其可以确保系统始终处于安全状态。</p>
+<p>资源分配图算法应用场景为每种资源类型只有一个实例(申请边，分配边，需求边，不形成环才允许分配)，而银行家算法应用于每种资源类型可以有多个实例的场景。</p>
+</li>
+</ul>
+<hr>
+<p><strong>3、死锁的检测与恢复：</strong></p>
+<p>可以允许系统进入死锁状态，但会维护一个系统的资源分配图，定期调用死锁检测算法来检测途中是否存在死锁，检测到死锁发生后，采取死锁恢复算法进行恢复。</p>
+<p><strong>检测</strong></p>
+<p>系统死锁可用资源分配图描述，圆圈表示进程，框表示资源。从进程到资源的有向边是请求边，从资源到进程的边是分配边。</p>
+<p>简化资源分配图可以检测系统状态是否为死锁状态。在资源分配图中，找出既不阻塞也不孤立的进程，消去它的所有请求边和分配边，使之成为孤立的点。如果系统状态不可被完全简化，那么代表死锁。</p>
+<hr>
+<p><strong>解除</strong></p>
+<ul>
+<li><p>资源剥夺法</p>
+<p>挂起某些死锁进程，抢占其资源，分配给其它死锁进程。</p>
+</li>
+<li><p>撤销进程法</p>
+<p>强制撤销部分甚至全部死锁进程，可以按进程优先级和撤销代价进行。</p>
+</li>
+<li><p>进程回退法</p>
+<p>让一个或多个进程回退到足以避免死锁的地步，要求系统保持进程的历史信息，设置还原点。</p>
+</li>
+</ul>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/09/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/" data-id="ckf3bohbd0004gn9k6ab08m98" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/11/leetcode%E5%88%B7%E9%A2%98-%E6%95%B0%E7%BB%84%E7%AF%87/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          leetcode刷题-数组篇
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/10/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81github%E5%90%8E%E7%94%B5%E8%84%91%E6%97%A0%E6%B3%95%E8%AE%BF%EF%BC%8C%E6%89%8B%E6%9C%BA%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hexo搭建博客推送github后电脑无法访，手机可以访问</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/">计算机网络基础知识-面试题</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/11/leetcode%E5%88%B7%E9%A2%98-%E6%95%B0%E7%BB%84%E7%AF%87/">leetcode刷题-数组篇</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9D%A2%E8%AF%95%E9%A2%98/">操作系统基础知识+面试题</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/10/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%8E%A8%E9%80%81github%E5%90%8E%E7%94%B5%E8%84%91%E6%97%A0%E6%B3%95%E8%AE%BF%EF%BC%8C%E6%89%8B%E6%9C%BA%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE/">hexo搭建博客推送github后电脑无法访，手机可以访问</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/10/%E2%80%9C%E6%88%91%E7%9A%84%E7%AC%ACn%E6%AC%A1%E5%B0%9D%E8%AF%95%E2%80%9D/">“我的第n次尝试”</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
